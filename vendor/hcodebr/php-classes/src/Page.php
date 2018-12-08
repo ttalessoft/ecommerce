@@ -13,7 +13,9 @@
         private $tpl;
         private $options = [];
         private $defaults = [
-           "data"=>[] 
+            "header"=>true,
+            "footer"=>true,
+            "data"=>[] 
         ];
 
         // Método construtor de páginas
@@ -36,7 +38,12 @@
 
             $this->setData($this->options["data"]);
 
-            $this->tpl->draw("header");
+            // Condicional para carregar ou não o header da página analisando o options do método
+            if ($this->options["header"] === true) {
+                
+                $this->tpl->draw("header");
+
+            }
 
         }
 
@@ -62,7 +69,12 @@
         // Métodos destrutores de páginas
         public function __destruct(){
 
-            $this->tpl->draw("footer");
+            // Condicional para carregar ou não o footer da página analisando o options do método
+            if ($this->options["footer"] === true) {
+                
+                $this->tpl->draw("footer");
+
+            }
 
         }
     }
