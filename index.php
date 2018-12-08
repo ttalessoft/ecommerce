@@ -5,6 +5,7 @@
     use \Slim\Slim;
     use \Hcode\Page;
     use \Hcode\PageAdmin;
+    use \Hcode\Model\User;
 
     $app = new Slim();
 
@@ -20,6 +21,8 @@
 
     // Rota da página inicial do admin
     $app->get('/admin', function(){
+
+        User::verifyLogin();
 
         $page = new PageAdmin();
         $page->setTpl("index");
@@ -44,7 +47,7 @@
     $app->post('/admin/login', function(){
 
         // Método de validação dos dados do usuário e senha
-        User::login($_POST["login"], $_POST["senha"]);
+        User::login($_POST["login"], $_POST["password"]);
 
         // Passa a nova rota caso autentique
         header("Location: /admin");

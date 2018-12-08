@@ -3,8 +3,11 @@
     namespace Hcode\Model;
 
     use \Hcode\DB\Sql;
+    use \Hcode\Model;
 
-    class User{
+    class User extends Model{
+
+        const SESSION = "User";
 
         // Função para validar login
         public static function login($login, $password){
@@ -33,11 +36,28 @@
                 
                 $user = new User();
 
+                $user->setData($data);
+
+                // Define uma sessão com o nome do usuário que conseguiu logar
+                $_SESSION[User::SESSION] = $user->getValues();
+
+                return $user;
     
             }else{
 
                 // Estoura uma excessão pela senha ser inválida
                 throw new \Exception("Usuário inexistente ou senha inválida.");
+
+            }
+        }
+
+        public static function verifyLogin($inadmin = true){
+
+            if (!isset($_SESSION[User::SESSION]) || !$_SESSION[User::SESSION] || !(int)$_SESSION[User::SESSION]["iduser"] > 0 || (bool)$_SESSION[User::SESSION]["inadmin"]) {
+                
+                header("Location: /admin/login");
+                
+                exit;
 
             }
         }
