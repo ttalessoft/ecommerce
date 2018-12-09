@@ -7,10 +7,12 @@
     class Mailer{
 
         const USERNAME = "nxtdesenvolvimento@gmail.com";
-        const PASSWORD = "minhasenha$40";
+        const PASSWORD = "123456789";
         const NAME_FROM = "NEXTTec - ERPWEB";
 
         public function __construct($toAddress, $toName, $subject, $tplName, $data = array()){
+
+
 
             //Create a new PHPMailer instance
             $mail = new \PHPMailer;
