@@ -8,11 +8,12 @@
 
         const USERNAME = "nxtdesenvolvimento@gmail.com";
         const PASSWORD = "minhasenha$40";
+        const NAME_FROM = "NEXTTec - ERPWEB";
 
         public function __construct($toAddress, $toName, $subject, $tplName, $data = array()){
 
             //Create a new PHPMailer instance
-            $mail = new PHPMailer;
+            $mail = new \PHPMailer;
 
             //Tell PHPMailer to use SMTP
             $mail->isSMTP();
@@ -21,7 +22,7 @@
             // 0 = off (for production use)
             // 1 = client messages
             // 2 = client and server messages
-            $mail->SMTPDebug = 2;
+            $mail->SMTPDebug = 1;
 
             //Set the hostname of the mail server
             $mail->Host = 'smtp.gmail.com';
@@ -39,26 +40,26 @@
             $mail->SMTPAuth = true;
 
             //Username to use for SMTP authentication - use full email address for gmail
-            $mail->Username = "***@gmail.com";
+            $mail->Username = Mailer::USERNAME;
 
             //Password to use for SMTP authentication
-            $mail->Password = "***#3";
+            $mail->Password = Mailer::PASSWORD;
 
             //Set who the message is to be sent from ( remetente do e-mail )
-            $mail->setFrom('atendimento@bb.com', 'Banco do Brasil');
+            $mail->setFrom(Mailer::USERNAME, Mailer::NAME_FROM);
 
             //Set an alternative reply-to address
-            $mail->addReplyTo('no-reply@bb.com', 'Banco do Brasil');
+            //$mail->addReplyTo('no-reply@nexttec.com.br', Mailer::NAME_FROM);
 
             //Set who the message is to be sent to
-            $mail->addAddress('***@gmail.com', 'Sr. Tta***va');
+            $mail->addAddress($toAddress, $toName);
 
             //Set the subject line
-            $mail->Subject = 'Trabalhando com PHPMailer';
+            $mail->Subject = $subject;
 
             //Read an HTML message body from an external file, convert referenced images to embedded,
             //convert HTML into a basic plain-text alternative body
-            $mail->msgHTML(file_get_contents('contents.html'), __DIR__);
+            $mail->msgHTML();
 
             //Replace the plain text body with one created manually
             $mail->AltBody = 'Texto que irá aparecer caso o contents.html não funcionar.';
