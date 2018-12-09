@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     require_once("vendor/autoload.php");
 
     use \Slim\Slim;
@@ -54,6 +56,16 @@
 
         // Para a execução dos processos
         exit;
+    });
+
+    $app->get('/admin/logout', function(){
+
+        User::logout();
+
+        header("Location: /admin/login");
+
+        exit;
+
     });
 
     // Método main da aplicação
