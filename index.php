@@ -185,7 +185,22 @@
     $app->post("/admin/forgot", function(){
 
         $user = User::getForgot($_POST["email"]);
-        
+
+        header("Location: /admin/forgot/sent");
+
+        exit;
+         
+    });
+
+    $app->get("/admin/forgot/sent", function(){
+
+        $page = new PageAdmin([
+            "header"=>false,
+            "footer"=>false
+        ]);
+
+        $page->setTpl("forgot-sent");
+
     });
 
     // Método main da aplicação

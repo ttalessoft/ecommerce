@@ -177,7 +177,17 @@
 
                     $link = "http://local.ecommerce.com.br/admin/forgot/reset?code=$code";
 
-                    
+                    $mailer = new Mailer($data["desemail"], $data["desperson"], "Redefinir senha NEXTTec", "forgot", array(
+
+                        "name"=>$data["desperson"],
+                        "link"=>$link
+
+                    ));
+
+                    $mailer->send();
+
+                    return $data;
+
                 }
 
             }
