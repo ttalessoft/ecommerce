@@ -203,5 +203,46 @@
 
     });
 
+    $app->get("/admin/forgot/reset", function(){
+
+        $user = User::validForgotDecryt($_GET["code"]);
+
+        $page = new PageAdmin([
+            "header"=>false,
+            "footer"=>false
+        ]);
+
+        $page->setTpl("forgot-reset", array(
+
+            "name"=>$user["desperson"],
+            "code"=>$_GET["code"]
+
+        ));
+    });
+
+    $app->post("/admin/forgot/reset", function(){
+
+        $userForgot = User::validForgotDecryt($_POST["code"]);
+
+        User::setForgotUsed($userForgot["idrecovery"]);
+
+        $user = new User();
+
+        $user->get((int)$userForgot["iduser"]);
+
+        $user->setPassword($_POST["password"]);
+
+        $page = new PageAdmin([
+
+            "header"=>false,
+            "footer"=>false
+
+        ]);
+
+        $page->setTpl("forgot-reset-success");
+
+
+    });
+
     // Método main da aplicação
     $app->run();
