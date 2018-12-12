@@ -19,7 +19,7 @@
                 
                 // condiciona se for um metodo get retorna o valor do campo
                 case 'get': 
-                    return $this->values[$fieldName]; 
+                    return (isset($this->values[$fieldName])) ? $this->values[$fieldName] : NULL; 
                         break;
                 // condiciona se for um método set ele edita/insere o valor a variável        
                 case 'set': 
