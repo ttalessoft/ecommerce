@@ -1,10 +1,7 @@
 <?php
 
-use \Slim\Slim;
-use \Hcode\Page;
 use \Hcode\PageAdmin;
 use \Hcode\Model\User;
-use \Hcode\Model\Category;
 
         // Rota da página inicial do admin
         $app->get('/admin', function(){
@@ -54,108 +51,7 @@ use \Hcode\Model\Category;
     
         });
     
-        // Método que lista todos os usuários em um relatório
-        $app->get("/admin/users", function(){
-    
-            User::verifyLogin();
-    
-            $users = User::listAll();
-    
-            $page = new PageAdmin();
-    
-            $page->setTpl("users", array(
-                "users"=>$users
-            ));
-    
-        });
-    
-        // Método que carrega a página para cadastro de usuários
-        $app->get("/admin/users/create", function(){
-    
-            User::verifyLogin();
-    
-            $page = new PageAdmin();
-    
-            $page->setTpl("users-create");
-    
-        });
-    
-        // Método que deleta um usuário a partir do seu id
-        $app->get("/admin/users/:iduser/delete", function($iduser){
-    
-            User::verifyLogin();
-    
-            $user = new User();
-    
-            $user->get((int)$iduser);
-    
-            $user->delete();
-    
-            header("Location: /admin/users");
-    
-            exit;
-    
-        });
-    
-        // Método que pega um usuário especifico pelo seu id
-        $app->get("/admin/users/:iduser", function($iduser){
-    
-            User::verifyLogin();
-    
-            $user = new User();
-    
-            $user->get((int)$iduser);
-    
-            $page = new PageAdmin();
-    
-            $page->setTpl("users-update", array(
-                
-                "user"=>$user->getValues()
-    
-            ));
-        
-        });
-    
-        // Método save save usuário via post (ação do formulário)
-        $app->post("/admin/users/create", function(){
-    
-            User::verifyLogin();
-    
-            $user = new User();
-    
-            $_POST["inadmin"] = (isset($_POST["inadmin"]))?1:0;
-    
-            $user->setData($_POST);
-    
-            $user->save();
-    
-            header("Location: /admin/users");
-    
-            exit;
-        });
-    
-    
-        // Método editar usuário via post (ação do formulário)
-        $app->post("/admin/users/:iduser", function($iduser){
-    
-            User::verifyLogin();
-    
-            $user = new User();
-    
-            $_POST["inadmin"] = (isset($_POST["inadmin"]))?1:0;
-    
-            $user->get((int)$iduser);
-    
-            $user->setData($_POST);
-    
-            $user->update();
-    
-            header("Location: /admin/users");
-    
-            exit;
-    
-        });
-    
+        // Método para carregar a página de esqueci a senha
         $app->get("/admin/forgot", function(){
     
             $page = new PageAdmin([
@@ -167,6 +63,7 @@ use \Hcode\Model\Category;
     
         });
     
+        // Método para enviar o e-mail para a função que envia o e-mail para o endereço de recuperaç;ao
         $app->post("/admin/forgot", function(){
     
             $user = User::getForgot($_POST["email"]);
@@ -177,6 +74,7 @@ use \Hcode\Model\Category;
              
         });
     
+        // Método que renderiza a página com a mensagem de e-mail enviado
         $app->get("/admin/forgot/sent", function(){
     
             $page = new PageAdmin([
@@ -188,6 +86,7 @@ use \Hcode\Model\Category;
     
         });
     
+        // Método que válida e encripta o código do e-mail
         $app->get("/admin/forgot/reset", function(){
     
             $user = User::validForgotDecryt($_GET["code"]);
@@ -205,6 +104,7 @@ use \Hcode\Model\Category;
             ));
         });
     
+        // 
         $app->post("/admin/forgot/reset", function(){
     
             $userForgot = User::validForgotDecryt($_POST["code"]);
@@ -225,95 +125,5 @@ use \Hcode\Model\Category;
             ]);
     
             $page->setTpl("forgot-reset-success");
-    
-        });
-    
-        $app->get("/admin/categories", function(){
-    
-            User::verifyLogin();
-    
-            $categories = Category::listAll();
-    
-            $page = new PageAdmin();
-    
-            $page->setTpl("categories", [
-    
-                'categories'=>$categories
-            ]);
-    
-        });
-    
-        $app->get("/admin/categories/create", function(){
-    
-            User::verifyLogin();
-    
-            $page = new PageAdmin();
-    
-            $page->setTpl("categories-create");
-    
-        });
-    
-        $app->post("/admin/categories/create", function(){
-    
-            User::verifyLogin();
-    
-            $category = new Category();
-    
-            $category->setData($_POST);
-    
-            $category->save();
-    
-            header("Location: /admin/categories");
-    
-            exit;
-    
-        });
-    
-        $app->get("/admin/categories/:idcategory/delete", function($idcategory){
-    
-            User::verifyLogin();
-    
-            $category = new Category();
-    
-            $category->get((int)$idcategory);
-    
-            $category->delete();
-    
-            header("Location: /admin/categories");
-    
-            exit;
-        });
-    
-        $app->get("/admin/categories/:idcategory", function($idcategory){
-    
-            User::verifyLogin();
-    
-            $category = new Category();
-    
-            $category->get((int)$idcategory);
-    
-            $page = new PageAdmin();
-    
-            $page->setTpl("categories-update", [
-                "category"=>$category->getValues()
-            ]);
-    
-        });
-    
-        $app->post("/admin/categories/:idcategory", function($idcategory){
-    
-            User::verifyLogin();
-    
-            $category = new Category();
-    
-            $category->get((int)$idcategory);
-    
-            $category->setData($_POST);
-    
-            $category->save();
-    
-            header("Location: /admin/categories");
-    
-            exit;
     
         });
