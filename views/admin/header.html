@@ -259,6 +259,7 @@ desired effect
         <li class="active"><a href="/admin/users"><i class="fa fa-users"></i> <span>Usuários</span></a></li>
         <li><a href="/admin/categories"><i class="fa fa-cogs"></i> <span>Categorias</span></a></li>
         <li><a href="/admin/products"><i class="fa fa-flag-o"></i> <span>Produtos</span></a></li>
+        <li><a href="/admin/fornecedores"><i class="fa fa-flag-o"></i> <span>Fornecedores</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">

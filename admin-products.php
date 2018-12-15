@@ -4,6 +4,7 @@
     use \Hcode\Model\User;
     use \Hcode\Model\Product;
 
+    // Carrega página e lista todos os itens
     $app->get("/admin/products", function(){
 
         User::verifyLogin();
@@ -17,6 +18,7 @@
         ]);
     });
 
+    // Carrega página para criar novo registro
     $app->get("/admin/products/create", function(){
 
         User::verifyLogin();
@@ -27,6 +29,7 @@
 
     });
 
+    // Cria novo registro no banco
     $app->post("/admin/products/create", function(){
 
         User::verifyLogin();
@@ -42,6 +45,7 @@
         exit;
     });
 
+    // Carrega página com id do registro para ação
     $app->get("/admin/products/:idproduct", function($idproduct){
 
         User::verifyLogin();
@@ -59,6 +63,7 @@
 
     });
 
+    // Edita item no banco a partir do id do registro
     $app->post("/admin/products/:idproduct", function($idproduct){
 
         User::verifyLogin();
@@ -79,6 +84,7 @@
 
     });
 
+    // Deleta um item a partir do id de um registro
     $app->get("/admin/products/:idproduct/delete", function($idproduct){
 
         User::verifyLogin();
