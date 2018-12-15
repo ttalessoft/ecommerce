@@ -5,9 +5,8 @@
     use \Hcode\DB\Sql;
     use \Hcode\Model;
     use \Hcode\Mailer;
-    use \Hcode\Model\Category;
-
-    class Category extends Model{
+    
+    class Product extends Model{
 
         public static function listAll(){
 
@@ -21,7 +20,7 @@
 
             $sql = new Sql();
 
-            $results = $sql->select("CALL sp_products_save(:idproduct, :desproduct, :vlprice, :vlwidht, :vlheight, :vllength, :vlweight, :desurl)", array(
+            $results = $sql->select("CALL sp_products_save(:idproduct, :desproduct, :vlprice, :vlwidth, :vlheight, :vllength, :vlweight, :desurl)", array(
 
                 ":idproduct"=>$this->getidproduct(),
                 ":desproduct"=>$this->getdesproduct(),
