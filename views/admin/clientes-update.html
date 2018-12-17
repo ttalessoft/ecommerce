@@ -3,7 +3,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Lista de Fornecedores
+      Lista de Clientes
     </h1>
   </section>
 
@@ -14,31 +14,30 @@
       <div class="col-md-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Editar Fornecedor</h3>
+            <h3 class="box-title">Editar Cliente</h3>
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <!-- form start -->
-          <form role="form" action="/admin/fornecedores/{$fornecedor.idfornecedor}" method="post">
+          <form role="form" action="/admin/clientes/{$cliente.idcliente}" method="post">
             <div class="box-body">
               <div class="col-md-12">
-                <label for="nome_razao_social">Nome/Razão Social</label>
-                <input type="text" class="form-control" id="nome_razao_social" name="nome_razao_social" placeholder="Digite o Nome ou Razão Social" value="{$fornecedor.nome_razao_social}">
+                <label for="nome_razao_social">Nome/Razão Social*</label>
+                <input type="text" class="form-control" id="nome_razao_social" name="nome_razao_social" placeholder="Digite o Nome ou Razão Social" value="{$cliente.nome_razao_social}" required>
               </div>
 
               <div class="col-md-6">
                 <label for="apelido_nome_fantasia">Apelido/Nome Fantasia</label>
                 <input type="text" class="form-control" id="apelido_nome_fantasia" name="apelido_nome_fantasia"
-                  placeholder="Digite o Apelido ou Nome Fantasia" value="{$fornecedor.apelido_nome_fantasia}">
+                  placeholder="Digite o Apelido ou Nome Fantasia" value="{$cliente.apelido_nome_fantasia}">
               </div>
 
               <div class="col-md-6">
                 <label for="contato">Contato</label>
-                <input type="text" class="form-control" id="contato" name="contato" placeholder="Digite o nome da pessoa em caso de pessoa jurídica" value="{$fornecedor.pessoa_contato}">
+                <input type="text" class="form-control" id="contato" name="contato" placeholder="Digite o nome da pessoa em caso de pessoa jurídica" value="{$cliente.pessoa_contato}">
               </div>
 
               <div class="col-md-12">
-                  <label for="tipo">Tipo: {$fornecedor.tipo}</label>
+                  <label for="tipo">Tipo: {$cliente.tipo}</label>
                   <br />
                   <input type="radio" name="tipo" value="f">
                   <label>Pessoa física</label>
@@ -48,8 +47,8 @@
 
               <div class="form-group">
                 <div class="col-md-6">
-                  <label for="cpf_cnpj">CPF/CNPJ</label>
-                  <input type="text" class="form-control" id="cpf_cnpj" name="cpf_cnpj" placeholder="000.000.000-00" value="{$fornecedor.cpf_cnpj}">
+                  <label for="cpf_cnpj">CPF/CNPJ*</label>
+                  <input type="text" class="form-control" id="cpf_cnpj" name="cpf_cnpj" placeholder="000.000.000-00" value="{$cliente.cpf_cnpj}" required>
                 </div>
               </div>
 
@@ -58,37 +57,37 @@
               <div class="form-group">
                 <div class="col-md-8">
                   <label for="logradouro">Endereço</label>
-                  <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Endereço..." value="{$fornecedor.logradouro}">
+                  <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Endereço..." value="{$cliente.logradouro}">
                 </div>
                 <div class="col-md-4">
                   <label for="numero">Número</label>
-                  <input type="text" class="form-control" id="numero" name="numero" placeholder="0000" value="{$fornecedor.numero}">
+                  <input type="text" class="form-control" id="numero" name="numero" placeholder="0000" value="{$cliente.numero}">
                 </div>
                 <div class="form-group">
                   <div class="col-md-8">
                     <label for="complemento">Complemento</label>
-                    <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Qd 00 Lt 00 - Prox... " value="{$fornecedor.complemento}">
+                    <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Qd 00 Lt 00 - Prox... " value="{$cliente.complemento}">
                   </div>
                   <div class="col-md-4">
                     <label for="cep">CEP</label>
-                    <input type="text" class="form-control" id="cep" name="cep" placeholder="00.000-000" value="{$fornecedor.cep}">
+                    <input type="text" class="form-control" id="cep" name="cep" placeholder="00.000-000" value="{$cliente.cep}">
                   </div>
                 </div>
 
                 <div class="col-md-4">
                   <label for="bairro">Bairro</label>
-                  <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Seu bairro..." value="{$fornecedor.bairro}">
+                  <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Seu bairro..." value="{$cliente.bairro}">
                 </div>
 
                 <div class="col-md-4">
-                  <label for="cidade">Cidade</label>
-                  <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Sua cidade..." value="{$fornecedor.cidade}">
+                  <label for="cidade">Cidade*</label>
+                  <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Sua cidade..." value="{$cliente.cidade}" required>
                 </div>
 
                 <div class="col-md-4">
-                  <label for="uf">Uf</label>
-                  <select name="uf" id="uf" class="form-control">
-                    <option value="{$fornecedor.uf}">{$fornecedor.uf}</option>
+                  <label for="uf">Uf*</label>
+                  <select name="uf" id="uf" class="form-control" required>
+                    <option value="{$cliente.uf}">{$cliente.uf}</option>
                     <option value="AC">AC</option>
                     <option value="AL">AL</option>
                     <option value="AM">AM</option>
@@ -124,22 +123,22 @@
               <div class="form-group">
                 <div class="col-md-12">
                   <label for="email">E-Mail</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="seuEmail@provedorDeEmail.com" value="{$fornecedor.email}">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="seuEmail@provedorDeEmail.com" value="{$cliente.email}">
                 </div>
                 <div class="col-md-6">
                   <label for="telefone_fixo">Telefone Fixo</label>
-                  <input type="tel" class="form-control" id="telefone_fixo" name="telefone_fixo" placeholder="(00)0000-0000" value="{$fornecedor.telefone_fixo}">
+                  <input type="tel" class="form-control" id="telefone_fixo" name="telefone_fixo" placeholder="(00)0000-0000" value="{$cliente.telefone_fixo}">
                 </div>
                 <div class="col-md-6">
-                  <label for="telefone_celular">Telefone Celular</label>
-                  <input type="tel" class="form-control" id="telefone_celular" name="telefone_celular" placeholder="(00)00000-0000" value="{$fornecedor.telefone_celular}">
+                  <label for="telefone_celular">Telefone Celular*</label>
+                  <input type="tel" class="form-control" id="telefone_celular" name="telefone_celular" placeholder="(00)00000-0000" value="{$cliente.telefone_celular}" required>
                 </div>
               </div>
 
               <dic class="col-md-12">
                 <label for="obs">Observações</label>
                 <br />
-                <textarea class="box-body" rows="5" cols="50" id="obs" name="obs" placeholder="Digite aqui suas observações sobre o Fornecedor">{$fornecedor.obs}</textarea>
+                <textarea class="box-body" rows="5" cols="50" id="obs" name="obs" placeholder="Digite aqui suas observações sobre o cliente">{$cliente.obs}</textarea>
               </dic>
             </div>
             <!-- /.box-body -->

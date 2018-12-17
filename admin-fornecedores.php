@@ -18,6 +18,7 @@
         
     });
 
+    // Renderiza a página de cadastro de Fornecedores
     $app->get("/admin/fornecedores/create", function(){
 
         User::verifyLogin();

@@ -1,4 +1,4 @@
-<!-- Content Wrapper. Contains page content -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -19,26 +19,26 @@
           <!-- /.box-header -->
           <!-- form start -->
           <!-- form start -->
-          <form role="form" action="/admin/fornecedores/{$fornecedor.idfornecedor}" method="post">
+          <form role="form" action="/admin/fornecedores/<?php echo htmlspecialchars( $fornecedor["idfornecedor"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" method="post">
             <div class="box-body">
               <div class="col-md-12">
                 <label for="nome_razao_social">Nome/Razão Social</label>
-                <input type="text" class="form-control" id="nome_razao_social" name="nome_razao_social" placeholder="Digite o Nome ou Razão Social" value="{$fornecedor.nome_razao_social}">
+                <input type="text" class="form-control" id="nome_razao_social" name="nome_razao_social" placeholder="Digite o Nome ou Razão Social" value="<?php echo htmlspecialchars( $fornecedor["nome_razao_social"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
               </div>
 
               <div class="col-md-6">
                 <label for="apelido_nome_fantasia">Apelido/Nome Fantasia</label>
                 <input type="text" class="form-control" id="apelido_nome_fantasia" name="apelido_nome_fantasia"
-                  placeholder="Digite o Apelido ou Nome Fantasia" value="{$fornecedor.apelido_nome_fantasia}">
+                  placeholder="Digite o Apelido ou Nome Fantasia" value="<?php echo htmlspecialchars( $fornecedor["apelido_nome_fantasia"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
               </div>
 
               <div class="col-md-6">
                 <label for="contato">Contato</label>
-                <input type="text" class="form-control" id="contato" name="contato" placeholder="Digite o nome da pessoa em caso de pessoa jurídica" value="{$fornecedor.pessoa_contato}">
+                <input type="text" class="form-control" id="contato" name="contato" placeholder="Digite o nome da pessoa em caso de pessoa jurídica" value="<?php echo htmlspecialchars( $fornecedor["pessoa_contato"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
               </div>
 
               <div class="col-md-12">
-                  <label for="tipo">Tipo: {$fornecedor.tipo}</label>
+                  <label for="tipo">Tipo: <?php echo htmlspecialchars( $fornecedor["tipo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></label>
                   <br />
                   <input type="radio" name="tipo" value="f">
                   <label>Pessoa física</label>
@@ -49,7 +49,7 @@
               <div class="form-group">
                 <div class="col-md-6">
                   <label for="cpf_cnpj">CPF/CNPJ</label>
-                  <input type="text" class="form-control" id="cpf_cnpj" name="cpf_cnpj" placeholder="000.000.000-00" value="{$fornecedor.cpf_cnpj}">
+                  <input type="text" class="form-control" id="cpf_cnpj" name="cpf_cnpj" placeholder="000.000.000-00" value="<?php echo htmlspecialchars( $fornecedor["cpf_cnpj"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 </div>
               </div>
 
@@ -58,37 +58,37 @@
               <div class="form-group">
                 <div class="col-md-8">
                   <label for="logradouro">Endereço</label>
-                  <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Endereço..." value="{$fornecedor.logradouro}">
+                  <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Endereço..." value="<?php echo htmlspecialchars( $fornecedor["logradouro"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 </div>
                 <div class="col-md-4">
                   <label for="numero">Número</label>
-                  <input type="text" class="form-control" id="numero" name="numero" placeholder="0000" value="{$fornecedor.numero}">
+                  <input type="text" class="form-control" id="numero" name="numero" placeholder="0000" value="<?php echo htmlspecialchars( $fornecedor["numero"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 </div>
                 <div class="form-group">
                   <div class="col-md-8">
                     <label for="complemento">Complemento</label>
-                    <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Qd 00 Lt 00 - Prox... " value="{$fornecedor.complemento}">
+                    <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Qd 00 Lt 00 - Prox... " value="<?php echo htmlspecialchars( $fornecedor["complemento"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                   </div>
                   <div class="col-md-4">
                     <label for="cep">CEP</label>
-                    <input type="text" class="form-control" id="cep" name="cep" placeholder="00.000-000" value="{$fornecedor.cep}">
+                    <input type="text" class="form-control" id="cep" name="cep" placeholder="00.000-000" value="<?php echo htmlspecialchars( $fornecedor["cep"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                   </div>
                 </div>
 
                 <div class="col-md-4">
                   <label for="bairro">Bairro</label>
-                  <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Seu bairro..." value="{$fornecedor.bairro}">
+                  <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Seu bairro..." value="<?php echo htmlspecialchars( $fornecedor["bairro"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 </div>
 
                 <div class="col-md-4">
                   <label for="cidade">Cidade</label>
-                  <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Sua cidade..." value="{$fornecedor.cidade}">
+                  <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Sua cidade..." value="<?php echo htmlspecialchars( $fornecedor["cidade"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 </div>
 
                 <div class="col-md-4">
                   <label for="uf">Uf</label>
                   <select name="uf" id="uf" class="form-control">
-                    <option value="{$fornecedor.uf}">{$fornecedor.uf}</option>
+                    <option value="<?php echo htmlspecialchars( $fornecedor["uf"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $fornecedor["uf"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
                     <option value="AC">AC</option>
                     <option value="AL">AL</option>
                     <option value="AM">AM</option>
@@ -124,22 +124,22 @@
               <div class="form-group">
                 <div class="col-md-12">
                   <label for="email">E-Mail</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="seuEmail@provedorDeEmail.com" value="{$fornecedor.email}">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="seuEmail@provedorDeEmail.com" value="<?php echo htmlspecialchars( $fornecedor["email"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 </div>
                 <div class="col-md-6">
                   <label for="telefone_fixo">Telefone Fixo</label>
-                  <input type="tel" class="form-control" id="telefone_fixo" name="telefone_fixo" placeholder="(00)0000-0000" value="{$fornecedor.telefone_fixo}">
+                  <input type="tel" class="form-control" id="telefone_fixo" name="telefone_fixo" placeholder="(00)0000-0000" value="<?php echo htmlspecialchars( $fornecedor["telefone_fixo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 </div>
                 <div class="col-md-6">
                   <label for="telefone_celular">Telefone Celular</label>
-                  <input type="tel" class="form-control" id="telefone_celular" name="telefone_celular" placeholder="(00)00000-0000" value="{$fornecedor.telefone_celular}">
+                  <input type="tel" class="form-control" id="telefone_celular" name="telefone_celular" placeholder="(00)00000-0000" value="<?php echo htmlspecialchars( $fornecedor["telefone_celular"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 </div>
               </div>
 
               <dic class="col-md-12">
                 <label for="obs">Observações</label>
                 <br />
-                <textarea class="box-body" rows="5" cols="50" id="obs" name="obs" placeholder="Digite aqui suas observações sobre o Fornecedor">{$fornecedor.obs}</textarea>
+                <textarea class="box-body" rows="5" cols="50" id="obs" name="obs" placeholder="Digite aqui suas observações sobre o Fornecedor"><?php echo htmlspecialchars( $fornecedor["obs"], ENT_COMPAT, 'UTF-8', FALSE ); ?></textarea>
               </dic>
             </div>
             <!-- /.box-body -->

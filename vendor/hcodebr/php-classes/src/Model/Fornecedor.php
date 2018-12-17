@@ -4,8 +4,9 @@
 
     use \Hcode\DB\Sql;
     use \Hcode\Model;
+    use \Hcode\Mailer;
 
-    class Fornecedor extends model{
+    class Fornecedor extends Model{
 
         public static function listAll(){
 
@@ -17,14 +18,12 @@
 
         public function save(){
 
+            date_default_timezone_set('America/Sao_Paulo');
+
             $sql = new Sql();
 
-            $results = $sql->select("CALL sp_fornecedores_save(
-                :nome_razao_social,:apelido_nome_fantasia,
-                :cpf_cnpj,:logradouro,:numero,:complemento,
-                :cep,:bairro,:cidade,:uf,:email,:telefone_fixo,
-                :telefone_celular,:tipo,:pessoa_contato,:obs
-            )", array(
+            $results = $sql->select("CALL sp_fornecedores_save(:idfornecedor,:nome_razao_social,:apelido_nome_fantasia,:cpf_cnpj,:logradouro,:numero,:complemento,:cep,:bairro,:cidade,:uf,:email,:telefone_fixo,:telefone_celular,:tipo,:pessoa_contato,:obs,:data_registro)", array(
+                ":idfornecedor"=>$this->getidfornecedor(),
                 ":nome_razao_social"=>$this->getnome_razao_social(),
                 ":apelido_nome_fantasia"=>$this->getapelido_nome_fantasia(),
                 ":cpf_cnpj"=>$this->getcpf_cnpj(),
@@ -40,7 +39,8 @@
                 ":telefone_celular"=>$this->gettelefone_celular(),
                 ":tipo"=>$this->gettipo(),
                 ":pessoa_contato"=>$this->getpessoa_contato(),
-                ":obs"=>$this->getobs()
+                ":obs"=>$this->getobs(),
+                ":data_registro"=>$date = date('Y-m-d H:i')
             ));
             
             $this->setData($results[0]);

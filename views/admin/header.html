@@ -256,21 +256,128 @@ desired effect
       <ul class="sidebar-menu">
         <li class="header">MENU</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="/admin/users"><i class="fa fa-users"></i> <span>Usuários</span></a></li>
-        <li><a href="/admin/categories"><i class="fa fa-cogs"></i> <span>Categorias</span></a></li>
-        <li><a href="/admin/products"><i class="fa fa-flag-o"></i> <span>Produtos</span></a></li>
-        <li><a href="/admin/fornecedores"><i class="fa fa-flag-o"></i> <span>Fornecedores</span></a></li>
+
+        <!-- Produtos -->
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+          <a href="#"><i class="fa fa-cube"></i> <span>Produtos</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
+            <li><a href="/admin/products/create"><i class="fa fa-plus"></i><span>Novo produto</span></a></li>
+            <li><a href="/admin/products"><i class="fa fa-newspaper-o"></i><span>Lista produtos</span></a></li>
+            <li><a href="/admin/categories"><i class="fa fa-cubes"></i> <span>Categorias</span></a></li>
           </ul>
         </li>
+        
+        <!-- Contas a pagar -->
+        <li class="treeview">
+          <a href="#"><i class="fa fa-ticket"></i> <span>Contas a pagar</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+          </ul>
+        </li>
+
+        <!-- Contas a receber -->
+        <li class="treeview">
+          <a href="#"><i class="fa fa-money"></i> <span>Contas a receber</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+          </ul>
+        </li>
+
+        <!-- Estoque -->
+        <li class="treeview">
+          <a href="#"><i class="fa fa-barcode"></i> <span>Estoque</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/admin/fornecedores"><i class="fa fa-flag-o"></i> <span>Fornecedores</span></a></li>
+            <li><a href="#">Item 2</a></li>
+          </ul>
+        </li>
+
+        <!-- Negócios -->
+        <li class="treeview">
+            <a href="#"><i class="fa fa-tty"></i> <span>Negócios</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="/admin/clientes"><i class="fa fa-users"></i> <span>Clientes</span></a></li>
+              <li><a href="#">Item 2</a></li>
+            </ul>
+          </li>
+          
+        <!-- Vendas -->
+        <li class="treeview">
+          <a href="#"><i class="fa fa-shopping-cart"></i> <span>Vendas</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/admin/clientes"><i class="fa fa-users"></i> <span>Clientes</span></a></li>
+            <li><a href="#">Item 2</a></li>
+          </ul>
+        </li>
+
+        <!-- Nf-e -->
+        <li class="treeview">
+          <a href="#"><i class="fa fa-qrcode"></i> <span>Nf-e</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+          </ul>
+        </li>
+
+        <!-- PDV -->
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>PDV</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+          </ul>
+        </li>
+
+        <!-- Rotinas especiais -->
+        <li class="treeview">
+          <a href="#"><i class="fa fa-gears"></i> <span>Rotinas especiais</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+          </ul>
+        </li>
+
+        <li class="active"><a href="/admin/users"><i class="fa fa-user-secret"></i> <span>Usuários</span></a></li>
+
+
       </ul>
       <!-- /.sidebar-menu -->
     </section>

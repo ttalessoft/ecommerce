@@ -3,12 +3,12 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Lista de Fornecedores
+    Lista de Clientes
   </h1>
   <ol class="breadcrumb">
     <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="/admin/fornecedores">Fornecedores</a></li>
-    <li class="active"><a href="/admin/fornecedores/create">Cadastrar</a></li>
+    <li><a href="/admin/clientes">Clientes</a></li>
+    <li class="active"><a href="/admin/clientes/create">Cadastrar</a></li>
   </ol>
 </section>
 
@@ -19,15 +19,15 @@
   	<div class="col-md-12">
   		<div class="box box-success">
         <div class="box-header with-border">
-          <h3 class="box-title">Novo Fornecedor</h3>
+          <h3 class="box-title">Novo Clientes</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form role="form" action="/admin/fornecedores/create" method="post">
+        <form role="form" action="/admin/clientes/create" method="post">
           <div class="box-body">
             <div class="col-md-12">
-              <label for="nome_razao_social">Nome/Razão Social</label>
-              <input type="text" class="form-control" id="nome_razao_social" name="nome_razao_social" placeholder="Digite o Nome ou Razão Social">
+              <label for="nome_razao_social">Nome/Razão Social*</label>
+              <input type="text" class="form-control" id="nome_razao_social" name="nome_razao_social" placeholder="Digite o Nome ou Razão Social" required>
             </div>
             
             <div class="col-md-6">
@@ -41,7 +41,7 @@
             </div>
 
             <div class="col-md-12">
-              <label for="tipo">Tipo</label>
+              <label for="tipo">Tipo*</label>
               <br/>
               <input type="radio" name="tipo" value="f" checked>
               <label>Pessoa física</label>
@@ -51,8 +51,8 @@
 
             <div class="form-group">
               <div class="col-md-6">
-                  <label for="cpf_cnpj">CPF/CNPJ</label>
-                  <input type="text" class="form-control" id="cpf_cnpj" name="cpf_cnpj" placeholder="000.000.000-00">
+                  <label for="cpf_cnpj">CPF/CNPJ*</label>
+                  <input type="text" class="form-control" id="cpf_cnpj" name="cpf_cnpj" placeholder="000.000.000-00" required>
               </div>
             </div>
 
@@ -84,13 +84,13 @@
               </div>
 
               <div class="col-md-4">
-                  <label for="cidade">Cidade</label>
-                  <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Sua cidade...">
+                  <label for="cidade">Cidade*</label>
+                  <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Sua cidade..." required>
               </div>
 
               <div class="col-md-4">
-                  <label for="uf">Uf</label>
-                  <select name="uf" id="uf" class="form-control">
+                  <label for="uf">Uf*</label>
+                  <select name="uf" id="uf" class="form-control" required>
                     <option value="">Selecione</option>
                     <option value="AC">AC</option>
                     <option value="AL">AL</option>
@@ -134,15 +134,15 @@
                     <input type="tel" class="form-control" id="telefone_fixo" name="telefone_fixo" placeholder="(00)0000-0000">
                 </div>
                 <div class="col-md-6">
-                    <label for="telefone_celular">Telefone Celular</label>
-                    <input type="tel" class="form-control" id="telefone_celular" name="telefone_celular" placeholder="(00)00000-0000">
+                    <label for="telefone_celular">Telefone Celular*</label>
+                    <input type="tel" class="form-control" id="telefone_celular" name="telefone_celular" placeholder="(00)00000-0000" required>
                 </div>
             </div>
 
             <dic class="col-md-12">
               <label for="obs">Observações</label>
               <br/>
-              <textarea class="box-body" rows="5" cols="50" id="obs" name="obs" placeholder="Digite aqui suas observações sobre o Fornecedor"></textarea>
+              <textarea class="box-body" rows="5" cols="50" id="obs" name="obs" placeholder="Digite aqui suas observações sobre o Fornecedor">  </textarea>
             </dic>
           </div>
           <!-- /.box-body -->
