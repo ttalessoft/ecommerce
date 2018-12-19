@@ -142,7 +142,7 @@
             <dic class="col-md-12">
               <label for="obs">Observações</label>
               <br/>
-              <textarea class="box-body" rows="5" cols="50" id="obs" name="obs" placeholder="Digite aqui suas observações sobre o Fornecedor"></textarea>
+              <textarea class="box-body" rows="5" cols="50" id="obs" name="obs" placeholder="Digite aqui suas observações sobre o Fornecedor">  </textarea>
             </dic>
           </div>
           <!-- /.box-body -->

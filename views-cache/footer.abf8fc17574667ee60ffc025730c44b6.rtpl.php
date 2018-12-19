@@ -89,8 +89,12 @@
 
 <!-- REQUIRED JS SCRIPTS -->
 
+
 <!-- jQuery 2.2.3 -->
 <script src="/res/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- jQuery Mask Plugin -->
+<script src="/res/admin/dist/js/jquery.mask.js"></script>
+<script src="/res/admin/dist/js/mascaras.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/res/admin/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
