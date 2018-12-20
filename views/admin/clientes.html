@@ -19,7 +19,8 @@
   		<div class="box box-primary">
             
             <div class="box-header">
-              <a href="/admin/clientes/create" class="btn btn-success">Cadastrar Clientes</a>
+              <a href="/admin/clientes/tipo" class="btn btn-success">Cadastrar Clientes</a>
+              <a href="/admin" class="btn btn-warning">Voltar</a>
             </div>
 
             <div class="box-body no-padding">

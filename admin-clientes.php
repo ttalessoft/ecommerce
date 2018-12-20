@@ -18,14 +18,34 @@
         
     });
 
-    // Renderiza a página de cadastro de clientes
-    $app->get("/admin/clientes/create", function(){
+    $app->get("/admin/clientes/tipo", function(){
+
+        User::verifyLogin();
+
+        $page = new PageAdmin();
+        
+        $page->setTpl("clientes-tipo");
+    });
+
+    // Renderiza a página de cadastro de clientes pessoa física
+    $app->get("/admin/clientes/create/pf", function(){
 
         User::verifyLogin();
 
         $page = new PageAdmin();
 
-        $page->setTpl("clientes-create");
+        $page->setTpl("clientes-create-pf");
+
+    });
+
+    // Renderiza a página de cadastro de clientes pessoa jurídica
+    $app->get("/admin/clientes/create/pj", function(){
+
+        User::verifyLogin();
+
+        $page = new PageAdmin();
+
+        $page->setTpl("clientes-create-pj");
 
     });
 
