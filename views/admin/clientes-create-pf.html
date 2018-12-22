@@ -3,7 +3,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Lista de Clientes
+    Cadastro Cliente <strong>Pessoa Física</strong>
   </h1>
   <ol class="breadcrumb">
     <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -19,7 +19,7 @@
   	<div class="col-md-12">
   		<div class="box box-success">
         <div class="box-header with-border">
-          <h3 class="box-title">Novo Clientes</h3>
+          <h3 class="box-title">Novo Cliente</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
@@ -40,19 +40,22 @@
                 <input type="text" class="form-control" id="contato" name="contato" placeholder="Digite o nome do contato">
             </div>
 
+            <div class="col-md-6">
+              <label for="data_nascimento">Aniversário</label>
+              <input type="datetime" class="form-control" id="data" name="data_nascimento" placeholder="Digite o aniversário do Cliente">
+            </div>
+
             <div class="col-md-12">
               <label for="tipo">Tipo*</label>
               <br/>
-              <input type="radio" name="tipo" value="f" checked>
+              <input type="radio" name="tipo" value="f" checked required>
               <label>Pessoa física</label>
-              <input type="radio" name="tipo" value="j" >
-              <label>Pessoa jurídica</label>
             </div>
 
             <div class="form-group">
               <div class="col-md-6">
-                  <label for="cpf_cnpj">CPF/CNPJ*</label>
-                  <input type="text" class="form-control" id="cpf_cnpj" name="cpf_cnpj" placeholder="000.000.000-00" required>
+                  <label for="cpf_cnpj">CPF</label>
+                  <input type="text" class="form-control" id="cpf" name="cpf_cnpj" placeholder="000.000.000-00" required>
               </div>
             </div>
 

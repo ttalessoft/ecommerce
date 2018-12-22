@@ -22,11 +22,12 @@ class Cliente extends Model{
 
         $sql = new Sql();
 
-        $results = $sql->select("CALL sp_clientes_save(:idcliente,:nome_razao_social,:apelido_nome_fantasia,:cpf_cnpj,:logradouro,:numero,:complemento,:cep,:bairro,:cidade,:uf,:email,:telefone_fixo,:telefone_celular,:tipo,:pessoa_contato,:obs,:data_registro)", array(
+        $results = $sql->select("CALL sp_clientes_save(:idcliente,:nome_razao_social,:apelido_nome_fantasia,:cpf_cnpj, :data_nascimento, :logradouro,:numero,:complemento,:cep,:bairro,:cidade,:uf,:email,:telefone_fixo,:telefone_celular,:tipo,:pessoa_contato,:obs,:data_registro)", array(
             ":idcliente"=>$this->getidcliente(),
             ":nome_razao_social"=>$this->getnome_razao_social(),
             ":apelido_nome_fantasia"=>$this->getapelido_nome_fantasia(),
             ":cpf_cnpj"=>$this->getcpf_cnpj(),
+            ":data_nascimento"=>$date1 = date('Y-m-d H:i:s', $this->getdata_nascimento()), //converter string para date para salvar
             ":logradouro"=>$this->getlogradouro(),
             ":numero"=>$this->getnumero(),
             ":complemento"=>$this->getcomplemento(),
@@ -40,7 +41,7 @@ class Cliente extends Model{
             ":tipo"=>$this->gettipo(),
             ":pessoa_contato"=>$this->getpessoa_contato(),
             ":obs"=>$this->getobs(),
-            ":data_registro"=>$date = date('Y-m-d H:i')
+            ":data_registro"=>$date2 = date('Y-m-d H:i')
         ));
         
         $this->setData($results[0]);
