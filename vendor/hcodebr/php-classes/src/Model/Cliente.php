@@ -27,7 +27,7 @@ class Cliente extends Model{
             ":nome_razao_social"=>$this->getnome_razao_social(),
             ":apelido_nome_fantasia"=>$this->getapelido_nome_fantasia(),
             ":cpf_cnpj"=>$this->getcpf_cnpj(),
-            ":data_nascimento"=>$date1 = date('Y-m-d H:i:s', $this->getdata_nascimento()), //converter string para date para salvar
+            ":data_nascimento"=>date("Y-m-d", strtotime($this->getdata_nascimento())),
             ":logradouro"=>$this->getlogradouro(),
             ":numero"=>$this->getnumero(),
             ":complemento"=>$this->getcomplemento(),

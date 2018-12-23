@@ -37,7 +37,7 @@
 
             <div class="col-md-6">
                 <label for="contato">Contato</label>
-                <input type="text" class="form-control" id="contato" name="contato" placeholder="Digite o nome do contato">
+                <input type="text" class="form-control" id="contato" name="pessoa_contato" placeholder="Digite o nome do contato">
             </div>
 
             <div class="col-md-6">

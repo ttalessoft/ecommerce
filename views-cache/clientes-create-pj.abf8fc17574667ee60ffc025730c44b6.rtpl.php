@@ -3,12 +3,12 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Lista de Clientes
+    Cadastro Cliente <strong>Pessoa Jurídica</strong>
   </h1>
   <ol class="breadcrumb">
     <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
     <li><a href="/admin/clientes">Clientes</a></li>
-    <li class="active"><a href="/admin/clientes/create">Cadastrar</a></li>
+    <li class="active"><a href="/admin/clientes/tipo">Cadastrar</a></li>
   </ol>
 </section>
 
@@ -26,33 +26,31 @@
         <form role="form" action="/admin/clientes/create" method="post">
           <div class="box-body">
             <div class="col-md-12">
-              <label for="nome_razao_social">Nome/Razão Social*</label>
-              <input type="text" class="form-control" id="nome_razao_social" name="nome_razao_social" placeholder="Digite o Nome ou Razão Social" required>
+              <label for="nome_razao_social">Razão Social*</label>
+              <input type="text" class="form-control" id="nome_razao_social" name="nome_razao_social" placeholder="Digite a Razão Social" required>
             </div>
             
             <div class="col-md-6">
-                <label for="apelido_nome_fantasia">Apelido/Nome Fantasia</label>
-                <input type="text" class="form-control" id="apelido_nome_fantasia" name="apelido_nome_fantasia" placeholder="Digite o Apelido ou Nome Fantasia">
+                <label for="apelido_nome_fantasia">Nome Fantasia</label>
+                <input type="text" class="form-control" id="apelido_nome_fantasia" name="apelido_nome_fantasia" placeholder="Digite o Nome Fantasia">
             </div>
 
             <div class="col-md-6">
                 <label for="contato">Contato</label>
-                <input type="text" class="form-control" id="contato" name="contato" placeholder="Digite o nome da pessoa em caso de pessoa jurídica">
+                <input type="text" class="form-control" id="contato" name="pessoa_contato" placeholder="Digite o nome da pessoa">
             </div>
 
             <div class="col-md-12">
               <label for="tipo">Tipo*</label>
               <br/>
-              <input type="radio" name="tipo" value="f" checked>
-              <label>Pessoa física</label>
-              <input type="radio" name="tipo" value="j">
+              <input type="radio" name="tipo" value="j" checked required>
               <label>Pessoa jurídica</label>
             </div>
 
             <div class="form-group">
               <div class="col-md-6">
-                  <label for="cpf_cnpj">CPF/CNPJ*</label>
-                  <input type="text" class="form-control" id="cpf_cnpj" name="cpf_cnpj" placeholder="000.000.000-00" required>
+                  <label for="cpf_cnpj">CNPJ*</label>
+                  <input type="text" class="form-control" id="cnpj" name="cpf_cnpj" placeholder="00.000.000/0000-00" required>
               </div>
             </div>
 

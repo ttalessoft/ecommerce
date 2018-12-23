@@ -35,7 +35,7 @@
 
             foreach ($data as $key => $value) {
 
-                $this->{"set".$key}($value);
+                $this->{"set".$key}(strtoupper($value));
 
             }
         }
@@ -43,7 +43,7 @@
         // Pega os dados do usuário que conseguiu fazer o login
         public function getValues(){
 
-            return $this->values;
+            return strtoupper($this->values);
         }
 
 
