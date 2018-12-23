@@ -18,14 +18,36 @@
         
     });
 
-    // Renderiza a página de cadastro de Fornecedores
-    $app->get("/admin/fornecedores/create", function(){
+    // Renderiza a página para seleção do tipo de Fornecedor pf/pj
+    $app->get("/admin/fornecedores/tipo", function(){
 
         User::verifyLogin();
 
         $page = new PageAdmin();
 
-        $page->setTpl("fornecedores-create");
+        $page->setTpl("fornecedores-tipo");
+    });
+
+    // Renderiza a página de cadastro de Fornecedor pf
+    $app->get("/admin/fornecedores/create/pf", function(){
+
+        User::verifyLogin();
+
+        $page = new PageAdmin();
+
+        $page->setTpl("fornecedores-create-pf");
+
+    });
+
+
+    // Renderiza a página de cadastro de Fornecedores pj
+    $app->get("/admin/fornecedores/create/pj", function(){
+
+        User::verifyLogin();
+
+        $page = new PageAdmin();
+
+        $page->setTpl("fornecedores-create-pj");
 
     });
 

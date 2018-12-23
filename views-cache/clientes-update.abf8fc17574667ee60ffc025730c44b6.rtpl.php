@@ -138,8 +138,12 @@
               <dic class="col-md-12">
                 <label for="obs">Observações</label>
                 <br />
-                <textarea class="box-body" rows="5" cols="50" id="obs" name="obs" placeholder="Digite aqui suas observações sobre o cliente"><?php echo htmlspecialchars( $cliente["obs"], ENT_COMPAT, 'UTF-8', FALSE ); ?></textarea>
+                <textarea class="textarea" rows="5" cols="50" id="obs" name="obs" placeholder="Digite aqui suas observações sobre o cliente"><?php echo htmlspecialchars( $cliente["obs"], ENT_COMPAT, 'UTF-8', FALSE ); ?></textarea>
               </dic>
+
+              
+            </div>
+    
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

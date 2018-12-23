@@ -43,7 +43,7 @@
         // Pega os dados do usuário que conseguiu fazer o login
         public function getValues(){
 
-            return strtoupper($this->values);
+            return $this->values;
         }
 
 

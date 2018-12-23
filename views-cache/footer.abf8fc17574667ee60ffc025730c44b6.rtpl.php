@@ -2,10 +2,10 @@
 <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      Anything you want
+      Precisa de ajuda?
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2006 <a href="https://nexttec.com.br">NEXTTec</a>.</strong> Todos os direitos reservados.
   </footer>
 
   <!-- Control Sidebar -->
@@ -19,7 +19,7 @@
     <div class="tab-content">
       <!-- Home tab content -->
       <div class="tab-pane active" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
+        <h3 class="control-sidebar-heading">Atividades recentes</h3>
         <ul class="control-sidebar-menu">
           <li>
             <a href="javascript:;">
@@ -99,6 +99,20 @@
 <script src="/res/admin/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/res/admin/dist/js/app.min.js"></script>
+<!-- text editor - CK Editor -->
+<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="/res/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script>
+  $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor1');
+    //bootstrap WYSIHTML5 - text editor
+    $(".textarea").wysihtml5();
+  });
+</script>
+
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

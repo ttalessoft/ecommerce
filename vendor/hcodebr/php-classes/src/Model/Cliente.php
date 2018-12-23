@@ -41,7 +41,7 @@ class Cliente extends Model{
             ":tipo"=>$this->gettipo(),
             ":pessoa_contato"=>$this->getpessoa_contato(),
             ":obs"=>$this->getobs(),
-            ":data_registro"=>$date2 = date('Y-m-d H:i')
+            ":data_registro"=>$date2 = date('Y-m-d H:i:s')
         ));
         
         $this->setData($results[0]);
