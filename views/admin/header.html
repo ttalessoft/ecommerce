@@ -281,7 +281,7 @@ desired effect
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Item 1</a></li>
+            <li><a href="/admin/tiposdoc">Tipos de documento</a></li>
             <li><a href="#">Item 2</a></li>
           </ul>
         </li>

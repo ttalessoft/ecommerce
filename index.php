@@ -17,6 +17,7 @@
     require_once("admin-products.php");
     require_once("admin-fornecedores.php");
     require_once("admin-clientes.php");
+    require_once("admin-tiposdoc.php");
 
     // Método main da aplicação
     $app->run();

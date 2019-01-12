@@ -3,7 +3,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Lista de Categorias
+    Lista de Tipos de Documento
   </h1>
 </section>
 
@@ -14,15 +14,15 @@
   	<div class="col-md-12">
   		<div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Editar Categoria</h3>
+          <h3 class="box-title">Editar Tipo de Documento</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form role="form" action="/admin/categories/<?php echo htmlspecialchars( $category["idcategory"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" method="post">
+        <form role="form" action="/admin/tipodoc/<?php echo htmlspecialchars( $tipodoc["id_tipo_doc"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" method="post">
           <div class="box-body">
             <div class="form-group">
-              <label for="descategory">Nome da categoria</label>
-              <input type="text" class="form-control" id="descategory" name="descategory" placeholder="Digite o nome da categoria" value="<?php echo htmlspecialchars( $category["descategory"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+              <label for="descategory">Tipo de documento</label>
+              <input type="text" class="form-control" id="tipo_doc" name="tipo_doc" placeholder="Digite o Tipo de Documento" value="<?php echo htmlspecialchars( $tipodoc["tipo_doc"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
             </div>
           </div>
           <!-- /.box-body -->

@@ -1,0 +1,21 @@
+create table tb_doc_pagar(
+	id_doc_pagar integer primary key auto_increment not null,
+    id_fornecedor integer,
+    id_tipo_doc integer,
+    id_centro_de_custo integer,
+    id_status_doc integer,
+    sr_doc varchar(8),
+    num_doc varchar(9),
+    obs text,
+    data_emissao date,
+    data_vencimento date,
+    data_protesta_em date,
+    data_cri timestamp,
+    data_edi date,
+    vlr_doc decimal(7,2),
+    vlr_pago decimal(7,2),
+    constraint fk_fornecedor foreign key (id_fornecedor) references tb_fornecedores (idfornecedor),
+    constraint fk_tipo_doc foreign key (id_tipo_doc) references tb_tipo_doc (id_tipo_doc),
+    constraint fk_centro_de_custo foreign key (id_centro_de_custo) references tb_centro_de_custos (id_centro_de_custo),
+    constraint fk_status_doc foreign key (id_status_doc) references tb_status_doc (id_status_doc)
+);
