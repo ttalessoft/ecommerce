@@ -26,6 +26,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   -->
   <link rel="stylesheet" href="/res/admin/dist/css/skins/skin-blue.min.css">
 
+  <link rel="stylesheet" href="/res/admin/plugins/iCheck/all.css">
+  <link rel="stylesheet" href="/res/admin/plugins/iCheck/line/green.css">
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -282,6 +285,7 @@ desired effect
           </a>
           <ul class="treeview-menu">
             <li><a href="/admin/tiposdoc">Tipos de documento</a></li>
+            <li><a href="/admin/centro-de-custos">Centro de custos</a></li>
             <li><a href="#">Item 2</a></li>
           </ul>
         </li>

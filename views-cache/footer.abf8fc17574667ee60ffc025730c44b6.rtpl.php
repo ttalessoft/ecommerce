@@ -89,12 +89,14 @@
 
 <!-- REQUIRED JS SCRIPTS -->
 
-
 <!-- jQuery 2.2.3 -->
 <script src="/res/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- jQuery Mask Plugin -->
 <script src="/res/admin/dist/js/jquery.mask.js"></script>
+<!-- Mascara de edição de campos -->
 <script src="/res/admin/dist/js/mascaras.js"></script>
+<!-- iChecked -->
+<script src="/res/admin/plugins/iCheck/icheck.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/res/admin/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
@@ -103,6 +105,25 @@
 <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="/res/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+
+<!-- Muda estilo dos checkbox -->
+<script>
+    $(document).ready(function(){
+      $('input').each(function(){
+        var self = $(this),
+          label = self.next(),
+          label_text = label.text();
+    
+        label.remove();
+        self.iCheck({
+          checkboxClass: 'icheckbox_line-blue',
+          radioClass: 'iradio_line-blue',
+          insert: '<div class="icheck_line-icon"></div>' + label_text
+        });
+      });
+    });
+    </script>
+
 <script>
   $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
@@ -112,7 +133,6 @@
     $(".textarea").wysihtml5();
   });
 </script>
-
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

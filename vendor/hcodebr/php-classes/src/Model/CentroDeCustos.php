@@ -38,9 +38,9 @@
             
             $sql = new Sql();
 
-            $results = $sql->select("SELECT * FROM tb_centro_de_custos WHERE id_centro_de_custo = :?", [
+            $results = $sql->select("SELECT * FROM tb_centro_de_custos WHERE id_centro_de_custo = :id_centro_de_custo", [
                
-                ":?"=>$id_centro_de_custo
+                ":id_centro_de_custo"=>$id_centro_de_custo
 
             ]);
 
@@ -51,9 +51,9 @@
 
             $sql = new Sql();
 
-            $sql->query("DELETE FROM tb_centro_de_custos WHERE id_centro_de_custo = :?", [
+            $sql->query("DELETE FROM tb_centro_de_custos WHERE id_centro_de_custo = :id_centro_de_custo", [
 
-                ":id_tipo_doc"=>$this->getid_centro_de_custo()
+                ":id_centro_de_custo"=>$this->getid_centro_de_custo()
                 
             ]);
         }
