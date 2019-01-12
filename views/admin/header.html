@@ -286,7 +286,7 @@ desired effect
           <ul class="treeview-menu">
             <li><a href="/admin/tiposdoc">Tipos de documento</a></li>
             <li><a href="/admin/centro-de-custos">Centro de custos</a></li>
-            <li><a href="#">Item 2</a></li>
+            <li><a href="/admin/status-docs">Status documento</a></li>
           </ul>
         </li>
 

@@ -22,7 +22,26 @@
 
             $sql = new Sql();
 
-            $results = $sql->select("CALL sp_fornecedores_save(:idfornecedor,:nome_razao_social,:apelido_nome_fantasia,:cpf_cnpj,:logradouro,:numero,:complemento,:cep,:bairro,:cidade,:uf,:email,:telefone_fixo,:telefone_celular,:tipo,:pessoa_contato,:obs,:data_registro)", array(
+            $results = $sql->select("CALL sp_fornecedores_save(
+                :idfornecedor,
+                :nome_razao_social,
+                :apelido_nome_fantasia,
+                :cpf_cnpj,
+                :logradouro,
+                :numero,
+                :complemento,
+                :cep,
+                :bairro,
+                :cidade,
+                :uf,
+                :email,
+                :telefone_fixo,
+                :telefone_celular,
+                :tipo,
+                :pessoa_contato,
+                :obs,
+                :data_registro
+                )", array(
                 ":idfornecedor"=>$this->getidfornecedor(),
                 ":nome_razao_social"=>$this->getnome_razao_social(),
                 ":apelido_nome_fantasia"=>$this->getapelido_nome_fantasia(),
