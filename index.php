@@ -20,6 +20,7 @@
     require_once("admin-tiposdoc.php");
     require_once("admin-centro-de-custos.php");
     require_once("admin-status-doc.php");
+    require_once("admin-doc-pagar.php");
 
     // Método main da aplicação
     $app->run();

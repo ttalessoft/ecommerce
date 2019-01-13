@@ -105,6 +105,18 @@
 <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="/res/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- Select2 -->
+<script src="/res/admin/plugins/select2/select2.full.js"></script>
+<!-- bootstrap datepicker -->
+<script src="/res/admin/plugins/datepicker/bootstrap-datepicker.js"></script>
+
+<!-- bootstrap datepicker -->
+<script>
+  //Date picker
+  $('#datepicker1').datepicker({autoclose: true});
+  $('#datepicker2').datepicker({autoclose: true});
+  $('#datepicker3').datepicker({autoclose: true});
+</script>
 
 <!-- Muda estilo dos checkbox -->
 <script>
@@ -122,6 +134,16 @@
         });
       });
     });
+    </script>
+
+    <!-- Select 2 -->
+    <script>
+      // In your Javascript (external .js resource or <script> tag)
+      $(document).ready(function() {
+          $('.js-example-basic-single').select2({
+            placeholder: 'Selecione uma opção'
+          });
+      });
     </script>
 
 <script>

@@ -1,4 +1,4 @@
-<!-- Content Wrapper. Contains page content -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -37,21 +37,23 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {loop="$docs_pagar"}
+                  <?php $counter1=-1;  if( isset($docs_pagar) && ( is_array($docs_pagar) || $docs_pagar instanceof Traversable ) && sizeof($docs_pagar) ) foreach( $docs_pagar as $key1 => $value1 ){ $counter1++; ?>
+
                   <tr>
-                    <td>{$value.id_doc_pagar}</td>
-                    <td>{$value.id_fornecedor}</td>
-                    <td>{$value.id_centro_de_custo}</td>
-                    <td>{$value.id_status_doc}</td>
-                    <td>{$value.data_emissao}</td>
-                    <td>{$value.data_vencimento}</td>
-                    <td>{$value.vlr_doc}</td>
+                    <td><?php echo htmlspecialchars( $value1["id_doc_pagar"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                    <td><?php echo htmlspecialchars( $value1["id_fornecedor"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                    <td><?php echo htmlspecialchars( $value1["id_centro_de_custo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                    <td><?php echo htmlspecialchars( $value1["id_status_doc"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                    <td><?php echo htmlspecialchars( $value1["data_emissao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                    <td><?php echo htmlspecialchars( $value1["data_vencimento"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                    <td><?php echo htmlspecialchars( $value1["vlr_doc"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                     <td>
                       <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
                       <a href="#" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
                     </td>
                   </tr>
-                  {/loop}
+                  <?php } ?>
+
                 </tbody>
               </table>
             </div>

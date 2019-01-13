@@ -1,4 +1,4 @@
-<!-- Content Wrapper. Contains page content -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -30,9 +30,11 @@
                 <label for="id_fornecedor">Beneficiário</label>
                 <select class="js-example-basic-single" style="width: 100%;" id="id_fornecedor" name="id_fornecedor">
                     <option>Selecione...</option>
-                  {loop="$fornecedores"}
-                  <option value="{$value.idfornecedor}">{$value.nome_razao_social} - {$value.cpf_cnpj}</option>
-                  {/loop}
+                  <?php $counter1=-1;  if( isset($fornecedores) && ( is_array($fornecedores) || $fornecedores instanceof Traversable ) && sizeof($fornecedores) ) foreach( $fornecedores as $key1 => $value1 ){ $counter1++; ?>
+
+                  <option value="<?php echo htmlspecialchars( $value1["idfornecedor"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["nome_razao_social"], ENT_COMPAT, 'UTF-8', FALSE ); ?> - <?php echo htmlspecialchars( $value1["cpf_cnpj"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                  <?php } ?>
+
                 </select>
               </div>
               <!-- Tipo Documento -->
@@ -40,9 +42,11 @@
                 <label for="id_tipo_doc">Tipo Doc.</label>
                 <select class="js-example-basic-single" style="width: 100%;" id="id_tipo_doc" name="id_tipo_doc">
                   <option>Selecione...</option>
-                  {loop="$tipos_doc"}
-                  <option value="{$value.id_tipo_doc}">{$value.tipo_doc}</option>
-                  {/loop}
+                  <?php $counter1=-1;  if( isset($tipos_doc) && ( is_array($tipos_doc) || $tipos_doc instanceof Traversable ) && sizeof($tipos_doc) ) foreach( $tipos_doc as $key1 => $value1 ){ $counter1++; ?>
+
+                  <option value="<?php echo htmlspecialchars( $value1["id_tipo_doc"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["tipo_doc"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                  <?php } ?>
+
                 </select>
               </div>
               <!-- Centro de custo -->
@@ -50,9 +54,11 @@
                 <label for="id_centro_de_custo">Centro de Custo</label>
                 <select class="js-example-basic-single" style="width: 100%;" id="id_centro_de_custo" name="id_centro_de_custo">
                   <option>Selecione...</option>
-                  {loop="$centro_de_custos"}
-                  <option value="{$value.id_centro_de_custo}">{$value.centro_de_custo}</option>
-                  {/loop}
+                  <?php $counter1=-1;  if( isset($centro_de_custos) && ( is_array($centro_de_custos) || $centro_de_custos instanceof Traversable ) && sizeof($centro_de_custos) ) foreach( $centro_de_custos as $key1 => $value1 ){ $counter1++; ?>
+
+                  <option value="<?php echo htmlspecialchars( $value1["id_centro_de_custo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["centro_de_custo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                  <?php } ?>
+
                 </select>
               </div>
               <!-- Status Documento -->
@@ -60,9 +66,11 @@
                 <label for="id_status_doc">Status Doc.</label>
                 <select class="js-example-basic-single" style="width: 100%;" id="id_status_doc" name="id_status_doc">
                   <option>Selecione...</option>
-                  {loop="$status_docs"}
-                  <option value="{$value.id_status_doc}">{$value.status_doc}</option>
-                  {/loop}
+                  <?php $counter1=-1;  if( isset($status_docs) && ( is_array($status_docs) || $status_docs instanceof Traversable ) && sizeof($status_docs) ) foreach( $status_docs as $key1 => $value1 ){ $counter1++; ?>
+
+                  <option value="<?php echo htmlspecialchars( $value1["id_status_doc"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["status_doc"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                  <?php } ?>
+
                 </select>
               </div>
               <!-- Número Documento -->
