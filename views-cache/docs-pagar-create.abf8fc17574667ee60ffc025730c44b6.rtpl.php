@@ -27,8 +27,8 @@
             <div class="box-body">
               <!-- Beneficiario -->
               <div class="col-md-12">
-                <label for="id_fornecedor">Beneficiário</label>
-                <select class="js-example-basic-single" style="width: 100%;" id="id_fornecedor" name="id_fornecedor">
+                <label for="id_fornecedor">Beneficiário*</label>
+                <select class="js-example-basic-single" style="width: 100%;" id="id_fornecedor" name="id_fornecedor" required>
                     <option>Selecione...</option>
                   <?php $counter1=-1;  if( isset($fornecedores) && ( is_array($fornecedores) || $fornecedores instanceof Traversable ) && sizeof($fornecedores) ) foreach( $fornecedores as $key1 => $value1 ){ $counter1++; ?>
 
@@ -39,8 +39,8 @@
               </div>
               <!-- Tipo Documento -->
               <div class="col-md-4">
-                <label for="id_tipo_doc">Tipo Doc.</label>
-                <select class="js-example-basic-single" style="width: 100%;" id="id_tipo_doc" name="id_tipo_doc">
+                <label for="id_tipo_doc">Tipo Doc.*</label>
+                <select class="js-example-basic-single" style="width: 100%;" id="id_tipo_doc" name="id_tipo_doc" required>
                   <option>Selecione...</option>
                   <?php $counter1=-1;  if( isset($tipos_doc) && ( is_array($tipos_doc) || $tipos_doc instanceof Traversable ) && sizeof($tipos_doc) ) foreach( $tipos_doc as $key1 => $value1 ){ $counter1++; ?>
 
@@ -51,8 +51,8 @@
               </div>
               <!-- Centro de custo -->
               <div class="col-md-4">
-                <label for="id_centro_de_custo">Centro de Custo</label>
-                <select class="js-example-basic-single" style="width: 100%;" id="id_centro_de_custo" name="id_centro_de_custo">
+                <label for="id_centro_de_custo">Centro de Custo*</label>
+                <select class="js-example-basic-single" style="width: 100%;" id="id_centro_de_custo" name="id_centro_de_custo" required>
                   <option>Selecione...</option>
                   <?php $counter1=-1;  if( isset($centro_de_custos) && ( is_array($centro_de_custos) || $centro_de_custos instanceof Traversable ) && sizeof($centro_de_custos) ) foreach( $centro_de_custos as $key1 => $value1 ){ $counter1++; ?>
 
@@ -75,8 +75,8 @@
               </div>
               <!-- Número Documento -->
               <div class="col-md-8">
-                <label for="num_doc">Número Doc.</label>
-                <input type="text" class="form-control" id="numero" name="num_doc" placeholder="000000000">
+                <label for="num_doc">Número Doc.*</label>
+                <input type="text" class="form-control" id="numero" name="num_doc" placeholder="000000000" required>
               </div>
               <!-- Série Documento -->
               <div class="col-md-4">
@@ -95,12 +95,12 @@
               </div>
               <!-- Data Vencimento Documento -->
               <div class="col-md-4">
-                  <label>Vencimento Doc.</label>
+                  <label>Vencimento Doc.*</label>
                   <div class="input-group date">
                     <div class="input-group-addon">
                       <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="text" class="form-control pull-right" id="datepicker2" name="data_vencimento" placeholder="Data de pagamento do doc...">
+                    <input type="text" class="form-control pull-right" id="datepicker2" name="data_vencimento" placeholder="Data de pagamento do doc..." required>
                   </div>
               </div>
               <!-- Data Protesto Documento -->
@@ -114,8 +114,15 @@
                   </div>
               </div>
               
+                <div class="col-md-4">
+                  <label for="vlr_doc">Valor doc.*</label>
+                  <input type="text" class="form-control" id="moeda1" name="vlr_doc" placeholder="R$ 0,00" required>
+                </div>
 
-
+                <div class="col-md-4">
+                    <label for="vlr_doc">Valor Pago.*</label>
+                    <input type="text" class="form-control" id="moeda2" name="vlr_pago" placeholder="R$ 0,00" required>
+                </div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer">

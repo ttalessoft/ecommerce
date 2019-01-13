@@ -14,7 +14,9 @@ $(document).ready(function(){
     })
     $("#data").mask("00/00/0000")
     $("#dataShort").mask("00/00/00")
-    $("#moeda").mask("999.999.990,00", {reverse: true})
+    $("#moeda1").mask("999.999.990,00", {reverse: true})
+    $("#moeda2").mask("999.999.990,00", {reverse: true})
+    $("#moeda3").mask("999.999.990,00", {reverse: true})
     $("#placa").mask("AAA-0000", {
         translation:{
             'A':{
