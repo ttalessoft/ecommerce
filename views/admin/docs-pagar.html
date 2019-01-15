@@ -33,22 +33,23 @@
                     <th>Data emissão</th>
                     <th>Data vencimento</th>
                     <th>Valor</th>
-                    <th style="width: 140px">&nbsp;</th>
+                    <th style="width: 210px">&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
                   {loop="$docs_pagar"}
                   <tr>
                     <td>{$value.id_doc_pagar}</td>
-                    <td>{$value.id_fornecedor}</td>
-                    <td>{$value.id_centro_de_custo}</td>
-                    <td>{$value.id_status_doc}</td>
+                    <td>{function="limitaString($value.nome_razao_social)"}</td>
+                    <td>{$value.centro_de_custo}</td>
+                    <td>{if="$value.status_doc == 'PAGO'"}<span class="fa fa-thumbs-up" style="color: #09b83e;"> {$value.status_doc}</span>{/if}{if="$value.status_doc != 'PAGO'"}<span class="fa fa-thumbs-down" style="color: #dd4b39;"> {$value.status_doc}</span>{/if}</td>
                     <td>{function="formataDatedmY($value.data_emissao)"}</td>
                     <td>{function="formataDatedmY($value.data_vencimento)"}</td>
-                    <td>{function="formataPreco($value.vlr_doc)"}</td>
-                    <td>
+                    <td>R$ {function="formataPreco($value.vlr_doc)"}</td>
+                    <td style="text-align: right;">
+                      {if="$value.status_doc != 'PAGO'"}<a href="#" class="btn btn-success btn-xs"><i class="fa fa-money"></i> Baixar</a>{/if}
                       <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
-                      <a href="#" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                      <a href="/admin/contas/{$value.id_doc_pagar}/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
                     </td>
                   </tr>
                   {/loop}

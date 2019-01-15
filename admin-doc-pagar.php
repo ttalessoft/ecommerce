@@ -58,3 +58,18 @@
 
         exit;
     });
+
+    // Carrega página com o id do registro para edição
+    $app->get("/admin/contas/:id_doc_pagar/delete", function($id_doc_pagar){
+
+        User::verifyLogin();
+
+        $conta = new DocPagar();
+
+        $conta->get((int) $id_doc_pagar);
+
+        $conta->delete();
+
+        header("Location: /admin/contas");
+        exit;
+    });

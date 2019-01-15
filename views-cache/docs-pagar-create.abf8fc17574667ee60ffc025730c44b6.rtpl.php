@@ -90,7 +90,7 @@
                     <div class="input-group-addon">
                       <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="text" class="form-control pull-right" id="datepicker1" name="data_emissao" placeholder="Data de emissão do doc...">
+                    <input type="date" class="form-control pull-right" id="" name="data_emissao" placeholder="Data de emissão do doc...">
                   </div>
               </div>
               <!-- Data Vencimento Documento -->
@@ -100,7 +100,7 @@
                     <div class="input-group-addon">
                       <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="text" class="form-control pull-right" id="datepicker2" name="data_vencimento" placeholder="Data de pagamento do doc..." required>
+                    <input type="date" class="form-control pull-right" id="" name="data_vencimento" placeholder="Data de pagamento do doc..." required>
                   </div>
               </div>
               <!-- Data Protesto Documento -->
@@ -110,7 +110,7 @@
                     <div class="input-group-addon">
                       <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="text" class="form-control pull-right" id="datepicker3" name="data_protesta_em" placeholder="Data de protesto do doc...">
+                    <input type="date" class="form-control pull-right" id="" name="data_protesta_em" placeholder="Data de protesto do doc...">
                   </div>
               </div>
               

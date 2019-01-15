@@ -45,6 +45,7 @@ $app->post("/admin/categories/create", function(){
 
 });
 
+// Exclui o registro no banco a partir de um $id
 $app->get("/admin/categories/:idcategory/delete", function($idcategory){
 
     User::verifyLogin();
@@ -60,6 +61,7 @@ $app->get("/admin/categories/:idcategory/delete", function($idcategory){
     exit;
 });
 
+// Envia a tupla de dados para um formulário
 $app->get("/admin/categories/:idcategory", function($idcategory){
 
     User::verifyLogin();
