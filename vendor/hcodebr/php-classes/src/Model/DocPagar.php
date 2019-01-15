@@ -18,7 +18,7 @@
 
             $sql = new Sql();
 
-            return $results = $sql->select("SELECT * FROM tb_doc_pagar ORDER BY data_vencimento ASC");
+            return $results = $sql->select("SELECT * FROM tb_doc_pagar ORDER BY data_vencimento DESC");
 
         }
 
@@ -36,14 +36,18 @@
                 ":sr_doc"=>$this->getsr_doc(),
                 ":num_doc"=>$this->getnum_doc(),
                 ":obs"=>$this->getobs(),
-                ":data_emissao"=>$this->getdata_emissao(),
-                ":data_vencimento"=>$this->getdata_vencimento(),
-                ":data_protesta_em"=>$this->getdata_protesta_em(),
+
+                ":data_emissao"=>date('Y-m-d', strtotime($this->getdata_emissao())),
+                ":data_vencimento"=>date('Y-m-d', strtotime($this->getdata_vencimento())),
+                ":data_protesta_em"=>date('Y-m-d', strtotime($this->getdata_protesta_em())),
                 ":data_cri"=>$data_cri = date('Y-m-d H:i:s'),
-                ":data_edi"=>$data_edi = date('Y-m-d H:i:s'),
+                ":data_edi"=>$data_edi = date('Y-m-d'),
+
                 ":vlr_doc"=>$this->getvlr_doc(),
                 ":vlr_pago"=>$this->getvlr_pago()
             ));
+
+            var_dump($results);
 
             $this->setData($results[0]);
         }

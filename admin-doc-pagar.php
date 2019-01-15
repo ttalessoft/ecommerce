@@ -14,7 +14,7 @@
 
         User::verifyLogin();
 
-        $status_docs = StatusDoc::listAll();
+        $docs_pagar = DocPagar::listAll();
 
         $page = new PageAdmin();
 

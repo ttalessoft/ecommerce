@@ -43,9 +43,9 @@
                     <td>{$value.id_fornecedor}</td>
                     <td>{$value.id_centro_de_custo}</td>
                     <td>{$value.id_status_doc}</td>
-                    <td>{$value.data_emissao}</td>
-                    <td>{$value.data_vencimento}</td>
-                    <td>{$value.vlr_doc}</td>
+                    <td>{function="formataDatedmY($value.data_emissao)"}</td>
+                    <td>{function="formataDatedmY($value.data_vencimento)"}</td>
+                    <td>{function="formataPreco($value.vlr_doc)"}</td>
                     <td>
                       <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
                       <a href="#" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
