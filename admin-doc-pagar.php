@@ -52,7 +52,7 @@
 
         $conta->setData($_POST);
 
-        $conta->save();
+        $conta->save();     
 
         header("Location: /admin/contas");
 

@@ -33,6 +33,7 @@
                     <th>Data emissão</th>
                     <th>Data vencimento</th>
                     <th>Valor</th>
+                    <th>Obs</th>
                     <th style="width: 210px">&nbsp;</th>
                   </tr>
                 </thead>
@@ -47,6 +48,7 @@
                     <td><?php echo formataDatedmY($value1["data_emissao"]); ?></td>
                     <td><?php echo formataDatedmY($value1["data_vencimento"]); ?></td>
                     <td>R$ <?php echo formataPreco($value1["vlr_doc"]); ?></td>
+                    <td><?php echo htmlspecialchars( $value1["obs"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                     <td style="text-align: right;">
                       <?php if( $value1["status_doc"] != 'PAGO' ){ ?><a href="#" class="btn btn-success btn-xs"><i class="fa fa-money"></i> Baixar</a><?php } ?>
 

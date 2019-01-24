@@ -33,6 +33,7 @@
                     <th>Data emissão</th>
                     <th>Data vencimento</th>
                     <th>Valor</th>
+                    <th>Obs</th>
                     <th style="width: 210px">&nbsp;</th>
                   </tr>
                 </thead>
@@ -46,6 +47,7 @@
                     <td>{function="formataDatedmY($value.data_emissao)"}</td>
                     <td>{function="formataDatedmY($value.data_vencimento)"}</td>
                     <td>R$ {function="formataPreco($value.vlr_doc)"}</td>
+                    <td>{$value.obs}</td>
                     <td style="text-align: right;">
                       {if="$value.status_doc != 'PAGO'"}<a href="#" class="btn btn-success btn-xs"><i class="fa fa-money"></i> Baixar</a>{/if}
                       <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>

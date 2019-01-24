@@ -25,7 +25,8 @@
             status_doc,
             vlr_doc,
             data_emissao,
-            data_vencimento    
+            data_vencimento,
+            tb_doc_pagar.obs
         from 
             (((tb_doc_pagar
             inner join tb_fornecedores on tb_doc_pagar.id_fornecedor = tb_fornecedores.idfornecedor)
@@ -39,31 +40,45 @@
         // Salva registro no banco
         public function save(){
 
-            $sql = new Sql();
+            for($i = 0; $i < $this->getqnt_parcelas(); $i++){
 
+                $sql = new Sql();
+
+                $vencimento = null;
+
+                if($i == 0){
+                    $vencimento = formataDateYmd($this->getdata_vencimento());
+                }else{
+                    $vencimento = formataDateYmd(somaDataSql($this->getdata_vencimento(), $this->getvence_a_cada() * $i));
+                }
+                
+                $results = $sql->select("CALL sp_doc_pagar_save(:id_doc_pagar,:id_fornecedor,:id_tipo_doc,:id_centro_de_custo,:id_status_doc,:sr_doc,:num_doc,:obs,:data_emissao,:data_vencimento,:data_protesta_em,:data_cri,:data_edi,:vlr_doc,:vlr_pago)", 
+                array(
+                    ":id_doc_pagar"=>$this->getid_doc_pagar(),
+                    ":id_fornecedor"=>$this->getid_fornecedor(),
+                    ":id_tipo_doc"=>$this->getid_tipo_doc(),
+                    ":id_centro_de_custo"=>$this->getid_centro_de_custo(),
+                    ":id_status_doc"=>$this->getid_status_doc(),
+                    ":sr_doc"=>$this->getsr_doc(),
+                    ":num_doc"=>$this->getnum_doc(),
+                    ":obs"=>$this->getobs() . ($i+1) . "#" . $this->getqnt_parcelas(),
+    
+                    ":data_emissao"=>formataDateYmd($this->getdata_emissao()),
+                    ":data_vencimento"=>$vencimento,
+                    ":data_protesta_em"=>formataDateYmd($this->getdata_protesta_em()),
+                    ":data_cri"=>$data_cri = date('Y-m-d H:i:s'),
+                    ":data_edi"=>'',
+    
+                    ":vlr_doc"=>formataPrecoBanco($this->getvlr_doc()),
+                    ":vlr_pago"=>formataPrecoBanco($this->getvlr_pago())
+                ));
+
+            }
+
+            return $results;
+
+            $this->setData($results[$i]);
             
-            return $results = $sql->select("CALL sp_doc_pagar_save(:id_doc_pagar,:id_fornecedor,:id_tipo_doc,:id_centro_de_custo,:id_status_doc,:sr_doc,:num_doc,:obs,:data_emissao,:data_vencimento,:data_protesta_em,:data_cri,:data_edi,:vlr_doc,:vlr_pago)", 
-            array(
-                ":id_doc_pagar"=>$this->getid_doc_pagar(),
-                ":id_fornecedor"=>$this->getid_fornecedor(),
-                ":id_tipo_doc"=>$this->getid_tipo_doc(),
-                ":id_centro_de_custo"=>$this->getid_centro_de_custo(),
-                ":id_status_doc"=>$this->getid_status_doc(),
-                ":sr_doc"=>$this->getsr_doc(),
-                ":num_doc"=>$this->getnum_doc(),
-                ":obs"=>$this->getobs(),
-
-                ":data_emissao"=>formataDateYmd($this->getdata_emissao()),
-                ":data_vencimento"=>formataDateYmd($this->getdata_vencimento()),
-                ":data_protesta_em"=>formataDateYmd($this->getdata_protesta_em()),
-                ":data_cri"=>$data_cri = date('Y-m-d H:i:s'),
-                ":data_edi"=>'',
-
-                ":vlr_doc"=>formataPrecoBanco($this->getvlr_doc()),
-                ":vlr_pago"=>formataPrecoBanco($this->getvlr_pago())
-            ));
-
-            $this->setData($results[0]);
         }
 
         // Pega o registro no banco a partir do $id
